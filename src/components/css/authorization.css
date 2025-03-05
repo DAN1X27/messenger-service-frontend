@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(to right, #4c0587, #0aa1d8);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 150px;
+}
+input {
+    font-size: 20px;
+    height: 30px;
+    border-style: solid;
+    border-radius: 10px;
+    width: 400px;
+}
+hr {
+    width: 500px;
+}
+.error {
+    margin-top: 10px;
+    font-size: 30px;
+    color: red;
+}
+.button {
+    height: 35px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: lightblue;
+    width: 400px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.button:hover {
+    transform: scale(1.1);
+}
+h1 {
+    margin-top: 250px;
+}
