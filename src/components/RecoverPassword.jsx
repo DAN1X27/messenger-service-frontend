@@ -1,5 +1,7 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Login from "./Login";
+import styles from "./css/Authorization.module.css"
+import {Helmet} from "react-helmet";
 
 function RecoverPassword() {
     const [error, setError] = useState({})
@@ -69,27 +71,37 @@ function RecoverPassword() {
     }
     if (!data.email) {
         return (
-            <form style={{paddingTop: "200px"}} onSubmit={(e) => sendCodeToUser(e)}>
+          <div>
+              <Helmet>
+                  <body className={styles.body}/>
+              </Helmet>
+              <form style={{paddingTop: "200px"}} onSubmit={(e) => sendCodeToUser(e)}>
                 <div style={{fontSize : "40px", marginBottom: "10px"}}>Enter your email and new password</div>
                 <div></div>
-                <input type={"text"} name={"email"} id={"email"} placeholder={"Email"}/>
-                <div className={"error"}>{error.email}</div>
-                <input type={"password"} name={"password"} id={"password"} placeholder={"New password"}/>
-                <div className={"error"}>{error.password}</div>
-                <input className={"button"} type={"submit"} value={"Complete"}/>
-                <div className={"error"}>{error.global}</div>
+                <input className={styles.input} type={"text"} name={"email"} id={"email"} placeholder={"Email"}/>
+                <div className={styles.error}>{error.email}</div>
+                <input className={styles.input} type={"password"} name={"password"} id={"password"} placeholder={"New password"}/>
+                <div className={styles.error}>{error.password}</div>
+                <input className={styles.button} type={"submit"} value={"Complete"}/>
+                <div className={styles.error}>{error.global}</div>
             </form>
+          </div>
         )
     } else if (!isComplete) {
         return (
-            <form style={{paddingTop: "200px"}} onSubmit={(e) => sendCodeToServer(e)}>
+          <div>
+              <Helmet>
+                  <body className={styles.body}/>
+              </Helmet>
+              <form style={{paddingTop: "200px"}} onSubmit={(e) => sendCodeToServer(e)}>
                 <label style={{fontSize: "40px", marginBottom: "20px"}} htmlFor={"code"}>Enter the key that was sent to your email</label>
                 <div></div>
-                <input type={"number"} id={"code"} name={"code"} placeholder={"Code"}/>
-                <div className={"error"}>{error.code}</div>
-                <input className={"button"} type={"submit"} value={"Send"}/>
-                <div className={"error"}>{error.global}</div>
+                <input className={styles.input} type={"number"} id={"code"} name={"code"} placeholder={"Code"}/>
+                <div className={styles.error}>{error.code}</div>
+                <input className={styles.button} type={"submit"} value={"Send"}/>
+                <div className={styles.error}>{error.global}</div>
             </form>
+          </div>
         )
     }
     return <Login/>

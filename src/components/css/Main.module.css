@@ -1,0 +1,162 @@
+.body {
+    background-image: linear-gradient(to right, #4c0587, #0aa1d8);
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.infoButton {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.infoButton::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.infoButton:hover::before {
+    opacity: 1;
+}
+
+.image {
+    border-radius: 100px;
+    height: 50px;
+    width: 50px;
+}
+
+.image {
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+.profileButtonImage {
+    border-radius: 100px;
+    height: 60px;
+    width: 60px;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profileImage {
+    margin-top: 100px;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+.backButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 60px;
+    text-align: left;
+    color: aqua;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.backButton:hover {
+    transform: scale(1.2);
+}
+.button {
+    height: 35px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: lightblue;
+    width: 400px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.logoutButton {
+    height: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    background-color: red;
+    border: none;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0;
+    right: 1px
+}
+
+.container {
+    font-size: 30px;
+    height: 70px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 390px;
+}
+.container:hover {
+    background-color: rgba(205, 205, 205, 0.5);
+}
+.line {
+    position: fixed;
+    left: 400px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #01133e;
+}
+.centerMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 40px;
+    cursor: default;
+}
+.chatContainer {
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.search {
+    text-align: left;
+    font-size: 20px;
+    height: 30px;
+    border-style: solid;
+    border-radius: 10px;
+    width: 400px;
+}
+.searchButton {
+    margin-top: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #0aa1d8;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+.searchButton:hover {
+    transform: scale(1.1);
+}

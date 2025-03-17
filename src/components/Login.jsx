@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Registration from "./Registration";
 import Main from "./Main";
-import "./css/authorization.css"
+import styles from "./css/Authorization.module.css"
 import RecoverPassword from "./RecoverPassword";
+import {Helmet} from "react-helmet";
 
 function Login() {
     const [page, setPage] = useState("login");
     const [error, setError] = useState({});
-
     const login = async (event) => {
         event.preventDefault();
         const form = event.target;
@@ -62,18 +62,21 @@ function Login() {
 
     return (
         <div>
+            <Helmet>
+                <body className={styles.body}/>
+            </Helmet>
             <h1>Login</h1>
             <form onSubmit={login}>
-                <input type="text" name="email" id="email" placeholder={"Email"}/>
-                <div className={"error"}>{error.email}</div>
-                <input type="password" name="password" id="password" placeholder={"Password"}/>
-                <div className={"error"}>{error.password}</div>
-                <input className={"button"} type="submit" name="login-button" value="Login"/>
+                <input className={styles.input} type="text" name="email" id="email" placeholder={"Email"}/>
+                <div className={styles.error}>{error.email}</div>
+                <input className={styles.input} type="password" name="password" id="password" placeholder={"Password"}/>
+                <div className={styles.error}>{error.password}</div>
+                <input className={styles.button} type="submit" name="login-button" value="Login"/>
                 <div></div>
-                <input className={"button"} type="button" name="registration-button" value="Registration" onClick={() => setPage("registration")}/>
+                <input className={styles.button} type="button" name="registration-button" value="Registration" onClick={() => setPage("registration")}/>
                 <div></div>
-                <input className={"button"} type={"button"} value={"Forgot password"} onClick={() => setPage("recover-password")}/>
-                <div className={"error"}>{error.global}</div>
+                <input className={styles.button} type={"button"} value={"Forgot password"} onClick={() => setPage("recover-password")}/>
+                <div className={styles.error}>{error.global}</div>
             </form>
         </div>
     );

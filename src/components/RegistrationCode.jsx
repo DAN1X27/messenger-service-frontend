@@ -1,6 +1,7 @@
 import Main from "./Main";
-import {useState} from "react";
-import "./css/authorization.css"
+import {useEffect, useState} from "react";
+import styles from "./css/Authorization.module.css"
+import {Helmet} from "react-helmet";
 
 function RegistrationCode() {
     const [isSent, setSent] = useState(false)
@@ -37,13 +38,18 @@ function RegistrationCode() {
     }
     if (isSent) return <Main/>
     return (
+      <div>
+         <Helmet>
+             <body className={styles.body}/>
+         </Helmet>
         <form style={{paddingTop: "200px"}} onSubmit={(event) => sendCode(event)}>
             <label style={{fontSize: "40px", marginBottom: "20px"}} htmlFor="code">Enter the key that was sent to your email</label>
             <div></div>
-            <input type="number" name={"code"} id="code" placeholder={"Code"}/>
-            <div id="error" className="error">{error}</div>
-            <input className={"button"} type="submit" id="send" value="Send"/>
+            <input className={styles.input} type="number" name={"code"} id="code" placeholder={"Code"}/>
+            <div id="error" className={styles.error}>{error}</div>
+            <input className={styles.button} type={"submit"} id="send" value="Send"/>
         </form>
-)
+      </div>
+    )
 }
 export default RegistrationCode;

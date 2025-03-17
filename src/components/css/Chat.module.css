@@ -1,0 +1,169 @@
+.body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to right, #4c0587, #0aa1d8);
+}
+.chatContainer {
+    width: 1200px;
+    height: 80vh;
+    background-color: #010722;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+.chatHeader {
+    background-color: #0088cc;
+    color: white;
+    padding: 15px 15px 5px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.2em;
+}
+.chatMessages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+}
+.chatMessageSelf {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 40%;
+    margin-left: auto;
+    background-color: #0088cc;
+    color: white;
+    word-wrap: break-word;
+}
+.chatMessageUser {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 40%;
+    background-color: #3e3e45;
+    color: white;
+    word-wrap: break-word;
+}
+.messageMediaSelf {
+    position: relative;
+    border-radius: 10px;
+    max-width: 60%;
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 20px 0 10px auto;
+}
+.messageMediaUser {
+    position: relative;
+    border-radius: 10px;
+    max-width: 60%;
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 20px auto 10px 0;
+}
+.audioMessageSelf {
+    position: relative;
+    margin: 20px 0 10px auto;
+    display: block;
+}
+.audioMessageUser {
+    position: relative;
+    margin: 20px auto 10px 0;
+    display: block;
+}
+.mediaSentTimeSelf {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 25%;
+    margin-left: 900px;
+    color: white;
+    word-wrap: break-word;
+}
+.videoDownloadUser, .videoDownloadSelf {
+    position: relative;
+    width: 250px;
+    height: 140px;
+    border-radius: 10px;
+    background-color: #3e3e45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.videoDownloadUser {
+    margin: 20px auto 10px 0;
+    cursor: pointer;
+}
+.videoDownloadSelf {
+    margin: 20px 0 10px auto;
+    cursor: pointer;
+}
+.videoDownloadUser, .videoDownloadSelf {
+    --loading-text: '⬇️';
+}
+.videoDownloadUser::before, .videoDownloadSelf::before {
+    content: var(--loading-text, '⬇️');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    font-size: 30px;
+    color: white;
+}
+.mediaSentTimeUser {
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+.chatInputContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.chatInput {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom-left-radius: 10px;
+    font-size: 1.2em;
+}
+.sendButton {
+    background-color: #0088cc;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: 5px;
+}
+.error {
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+.voiceMessageButton {
+    background: none;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 5px;
+}

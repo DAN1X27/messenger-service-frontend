@@ -1,6 +1,7 @@
 import RegistrationCode from "./RegistrationCode";
-import React, {useState} from "react";
-import "./css/authorization.css"
+import React, {useEffect, useState} from "react";
+import styles from "./css/Authorization.module.css"
+import {Helmet} from "react-helmet";
 
 function Registration() {
     const [isRegistered, setRegistered] = useState(false)
@@ -56,23 +57,25 @@ function Registration() {
         return Object.keys(newError).length === 0
     }
     if (isRegistered) {
-        console.log(isRegistered)
         return <RegistrationCode/>;
     }
     return (
         <div>
+            <Helmet>
+                <body className={styles.body}/>
+            </Helmet>
             <h1>Registration</h1>
             <form onSubmit={(event) => registration(event)}>
-                <input type="text" name="email" id="email" placeholder={"Email"}/>
-                <div className={"error"}>{error.email}</div>
-                <input type="text" name="username" id="username" placeholder={"Username"}/>
-                <div className={"error"}>{error.username}</div>
-                <input type="password" name="password" id="password" placeholder={"Password"}/>
-                <div className={"error"}>{error.password}</div>
-                <input type={"password"} name={"repeat-password"} placeholder={"Repeat password"}/>
-                <div className={"error"}>{error.repeatPassword}</div>
-                <input id="registration" className={"button"} type="submit" value="Registration"/>
-                <div className={"error"}>{error.global}</div>
+                <input className={styles.input} type="text" name="email" id="email" placeholder={"Email"}/>
+                <div className={styles.error}>{error.email}</div>
+                <input className={styles.input} type="text" name="username" id="username" placeholder={"Username"}/>
+                <div className={styles.error}>{error.username}</div>
+                <input className={styles.input} type="password" name="password" id="password" placeholder={"Password"}/>
+                <div className={styles.error}>{error.password}</div>
+                <input className={styles.input} type={"password"} name={"repeat-password"} placeholder={"Repeat password"}/>
+                <div className={styles.error}>{error.repeatPassword}</div>
+                <input id="registration" className={styles.button} type="submit" value="Registration"/>
+                <div className={styles.error}>{error.global}</div>
             </form>
         </div>
     );
